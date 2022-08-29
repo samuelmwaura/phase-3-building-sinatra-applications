@@ -1,11 +1,6 @@
-require 'sinatra'
+require './config/environment.rb'  #we only need require this because all other gems are required within the environment file
 
-class App < Sinatra::Base
+run ApplicationController #This is a class that runs the server.
 
-  get '/' do
-    'reload please!!!'
-  end
-  
-end
 
-run App
+#The config file is what gets the server listening for the requests
