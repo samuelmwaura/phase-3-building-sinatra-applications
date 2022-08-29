@@ -19,14 +19,14 @@ end
   rand(1..5).times do
     # get a random user for every review
     # https://stackoverflow.com/a/25577054
-    user = User.order('RANDOM()').first
+    user = User.order('RANDOM()').first  #the users are reordered everytime randomly and the first is picked every time
 
     # A review belongs to a game and a user, so we must provide those foreign keys
     Review.create(
       score: rand(1..10),
       comment: Faker::Lorem.sentence,
-      game_id: game.id,
-      user_id: user.id
+      game_id: game.id,  #the created user in the current iteration
+      user_id: user.id  #the randomly selected user 
     )
   end
 end

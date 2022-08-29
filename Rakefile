@@ -9,3 +9,10 @@ task :console do
   # Open a Pry session
   Pry.start
 end
+
+
+#A common task for setting the server to reload every time a change is made. This is similar to nodemon
+desc "Track and reload the server"
+task :server do
+  exec "rerun -b 'rackup config.ru'"
+end#run using bundle exec rake server
